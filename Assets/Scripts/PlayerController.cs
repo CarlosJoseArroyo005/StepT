@@ -39,6 +39,7 @@ public class PlayerController : MonoBehaviour
         if (score == 10)
         {
             winText.gameObject.SetActive (true);
+
         }
     }
 
@@ -58,6 +59,14 @@ public class PlayerController : MonoBehaviour
 
             SetScoreText();
         }
+        else if (other.gameObject.CompareTag("UnPickUp"))
+        {
+            other.gameObject.SetActive(false);
+            score--;
+
+            SetScoreText();
+        }
 
     }
 }
+
